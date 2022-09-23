@@ -1,0 +1,6 @@
+#启动ctfd cd CTFd
+python3 serve.py
+#gunicorn端口映射
+gunicorn --bind 0.0.0.0:8000 -w 9 "CTFd:create_app()"
+#指定文件开启容器
+docker-compose up -d
